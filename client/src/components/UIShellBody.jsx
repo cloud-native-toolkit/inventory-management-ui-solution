@@ -15,7 +15,7 @@ class UIShellBody extends Component {
     ];
     return (
       <div className="pattern-container">
-        <PatternName showDescription={true} />
+        <PatternName showDescription={true} stockService={this.props.stockService} />
       </div>
     );
   }
