@@ -30,19 +30,21 @@
   "author": "IBM Garage for Cloud",
   "license": "ISC",
   "dependencies": {
-    "client": "file:./client",
     "body-parser": "^1.17.2",
+    "client": "file:./client",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-http-proxy": "^1.6.0",
     "ibm-cloud-env": "^0",
     "log4js": "^3.0.5",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "superagent": "^5.1.0"
   },
   "devDependencies": {
     "@types/node": "^11.13.19",
+    "@types/superagent": "^4.1.4",
     "nodemon": "^1.12.1",
-    "supertest": "^4.0.2",
-    "sonarqube-scanner": "^2.5.0"
+    "sonarqube-scanner": "^2.5.0",
+    "supertest": "^4.0.2"
   }
 }
