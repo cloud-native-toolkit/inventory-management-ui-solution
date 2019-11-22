@@ -13,8 +13,8 @@ metadata:
     app: {{ .Release.Name }}
         {{- if .Values.ingress.appid.enabled }}
   annotations:
-    ingress.bluemix.net/appid-auth: {{ printf "bindSecret=%s namespace=%s requestType=%s serviceName=%s" (required "AppId binding name is required to enable auth on the ingress" .Values.ingress.appid.binding.name) $namespace $requestType $fullName }}
-        {{- end}}
+    ingress.bluemix.net/appid-auth: {{ printf "bindSecret=%s namespace=%s requestType=%s serviceName=%s" (required "AppId binding is required to enable auth on the ingress" .Values.ingress.appid.binding.name) .Values.ingress.appid.binding.namespace $requestType $fullName }}
+  {{- end}}
 spec:
         {{- if include "starter-kit-chart.tlsSecretName" . }}
   tls:
