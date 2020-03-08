@@ -6,6 +6,8 @@ global: {}
 replicaCount: 1
 logLevel: "debug"
 
+apiHost: "inventory-management-bff:80"
+
 image:
   repository: replace
   tag: replace
@@ -28,6 +30,9 @@ ingress:
     enabled: false
     # web or app - https://cloud.ibm.com/docs/services/appid?topic=appid-kube-auth
     requestType: web
+    binding:
+      name: ""
+      namespace: ""
 
 #  host: hello
   namespaceInHost: true

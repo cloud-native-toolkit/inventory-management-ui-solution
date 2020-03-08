@@ -45,6 +45,8 @@ spec:
               value: {{ include "starter-kit.host" . }}
             - name: PROTOCOLS
               value: {{ include "starter-kit.protocols" . }}
+            - name: API_HOST
+              value: {{ .Values.apiHost | quote }}
             - name: LOG_LEVEL
               value: {{ .Values.logLevel | quote }}
           resources:
