@@ -4,11 +4,6 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: {{ include "starter-kit.fullname" . }}
-  labels: 
-    app.kubernetes.io/name: {{ include "starter-kit.appname" . }}
-    helm.sh/chart: {{ include "starter-kit.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app: {{ .Release.Name }}
   annotations:
     argocd.argoproj.io/sync-options: Validate=false
 spec:
