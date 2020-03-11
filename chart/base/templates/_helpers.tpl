@@ -2,8 +2,14 @@
 {{/*
 Expand the name of the chart.
 */}}
+
 {{- define "starter-kit.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "starter-kit.appname" -}}
+{{ $namespace := $.Release.Namespace }}
+{{- printf "%s-%s" $namespace (include "starter-kit.name" .) -}}
 {{- end -}}
 
 {{/*

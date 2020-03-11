@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "starter-kit.fullname" . }}
-  labels:
-    app.kubernetes.io/name: {{ include "starter-kit.name" . }}
+  labels: 
+    app.kubernetes.io/name: {{ include "starter-kit.appname" . }}
     helm.sh/chart: {{ include "starter-kit.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app: {{ .Release.Name }}
