@@ -1,11 +1,12 @@
 {{- if .Values.ingress.enabled -}}
 {{- $serviceName := include "starter-kit.fullname" . -}}
+{{- $fullName := include "starter-kit.fullname" . -}}
 {{- $namespace := default .Release.Namespace .Values.ingress.appid.binding.namespace -}}
 {{- $requestType := .Values.ingress.appid.requestType -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ include "starter-kit.fullname" . }}
+  name: {{ $fullName }}
   labels:
     app.kubernetes.io/name: {{ include "starter-kit.appname" . }}
     helm.sh/chart: {{ include "starter-kit.chart" . }}
