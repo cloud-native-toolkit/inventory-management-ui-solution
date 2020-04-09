@@ -4,6 +4,8 @@ metadata:
   name: {{ include "starter-kit.fullname" . }}
   labels: 
     app.kubernetes.io/name: {{ include "starter-kit.appname" . }}
+    app.kubernetes.io/part-of: inventory
+    app.openshift.io/runtime: nodejs
     helm.sh/chart: {{ include "starter-kit.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app: {{ .Release.Name }}
