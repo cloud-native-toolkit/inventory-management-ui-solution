@@ -8,7 +8,7 @@ metadata:
   labels: 
     app.kubernetes.io/name: {{ include "starter-kit.appname" . }}
     app.kubernetes.io/part-of: inventory
-    app.openshift.io/runtime: nodejs
+    app.openshift.io/runtime: modern-webapp
     helm.sh/chart: {{ include "starter-kit.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app: {{ .Release.Name }}
