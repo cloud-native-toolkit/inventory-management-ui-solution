@@ -8,6 +8,7 @@
     "node": "^8.11.1"
   },
   "scripts": {
+    "postinstall": "cd client && npm install",
     "start": "node server/server.js",
     "start:dev": "cd client && npm start",
     "debug": "chmod +x run-debug && ./run-debug",
@@ -31,7 +32,6 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "client": "file:./client",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-http-proxy": "^1.6.0",
