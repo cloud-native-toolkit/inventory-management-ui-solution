@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "starter-kit.fullname" . }}
   annotations:
+    app.openshift.io/connectsTo: {{ .Values.connectsTo }}
     app.openshift.io/vcs-ref: master
     app.openshift.io/vcs-uri: https://github.com/gct-showcase/inventory-ui
   labels: 
@@ -51,7 +52,7 @@ spec:
             - name: PROTOCOLS
               value: ""
             - name: API_HOST
-              value: {{ .Values.apiHost | quote }}
+              value: {{ printf "%s:80" .Values.connectsTo | quote }}
             - name: LOG_LEVEL
               value: {{ .Values.logLevel | quote }}
           resources:
