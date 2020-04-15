@@ -40,3 +40,9 @@ ingress:
   path: "/"
 
 #  tlsSecretName: ""
+
+vcsInfo:
+  repoUrl: ""
+  branch: ""
+
+partOf: "inventory"
