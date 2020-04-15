@@ -1,4 +1,4 @@
-export function initTracer (serviceName) {
+function initTracer (serviceName) {
     const initJaegerTracer = require('jaeger-client').initTracerFromEnv;
 
     // Sampler set to const 1 to capture every request, do not do this for production
@@ -11,3 +11,5 @@ export function initTracer (serviceName) {
 
     return initJaegerTracer(config)
 }
+
+module.exports = initTracer;
