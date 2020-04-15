@@ -22,6 +22,10 @@ const localConfig = require("./config/local.json");
 const path = require("path");
 var cookieParser = require("cookie-parser");
 
+const tracer = initTracer('inventory-ui')
+const opentracing = require('opentracing')
+opentracing.initGlobalTracer(tracer)
+
 const logger = log4js.getLogger(appName);
 const app = express();
 
