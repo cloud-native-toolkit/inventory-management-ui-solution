@@ -6,8 +6,6 @@ global: {}
 replicaCount: 1
 logLevel: "debug"
 
-connectsTo: inventory-management-bff-solution
-
 image:
   repository: replace
   tag: replace
@@ -30,9 +28,6 @@ ingress:
     enabled: false
     # web or app - https://cloud.ibm.com/docs/services/appid?topic=appid-kube-auth
     requestType: web
-    binding:
-      name: ""
-      namespace: ""
 
 #  host: hello
   namespaceInHost: true
@@ -45,4 +40,8 @@ vcsInfo:
   repoUrl: ""
   branch: ""
 
-partOf: "inventory"
+partOf: inventory
+
+connectsTo: inventory-management-bff-solution
+
+runtime: nodejs

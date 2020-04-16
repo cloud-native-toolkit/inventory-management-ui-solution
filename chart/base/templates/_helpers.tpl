@@ -2,7 +2,6 @@
 {{/*
 Expand the name of the chart.
 */}}
-
 {{- define "starter-kit.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
