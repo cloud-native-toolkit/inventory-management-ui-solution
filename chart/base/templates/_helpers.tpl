@@ -6,11 +6,6 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "starter-kit.appname" -}}
-{{ $namespace := $.Release.Namespace }}
-{{- printf "%s-%s" $namespace (include "starter-kit.name" .) -}}
-{{- end -}}
-
 {{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).

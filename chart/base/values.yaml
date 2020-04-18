@@ -44,4 +44,4 @@ partOf: inventory
 
 connectsTo: inventory-management-bff-solution
 
-runtime: nodejs
+runtime: js
