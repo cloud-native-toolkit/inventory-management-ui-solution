@@ -35,7 +35,7 @@ class StockItemList extends Component {
 
     async componentDidMount() {
         this.setState({
-            data: await this.props.data.getStockItems()
+            data: await this.props.stockService.getStockItems()
         });
     }
 
