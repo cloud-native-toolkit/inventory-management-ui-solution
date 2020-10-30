@@ -16,7 +16,7 @@ class StockItemListView extends Component<any, any> {
     render() {
         return (
             <div className="pattern-container">
-                <StockItemList data={this.stockApi} />
+                <StockItemList stockService={this.stockApi} />
             </div>
         );
     }

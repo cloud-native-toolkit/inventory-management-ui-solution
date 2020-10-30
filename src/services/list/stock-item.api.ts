@@ -1,5 +1,5 @@
 import { StockItem } from "../../models/list/StockItem";
-export abstract class StockItemMockApi {
+export abstract class StockItemApi {
     abstract async getStockItems(): Promise<StockItem[]>;
 }
 

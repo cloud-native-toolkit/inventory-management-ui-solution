@@ -22,8 +22,11 @@ import { FormService } from './form/forms.service';
 import { ListService } from './list/list.service';
 import { CompositeFormService } from './composite/compositeform.service';
 
-import { StockItemApi } from './list/stock-item-mock.api';
+import { StockItemMockApi } from './list/stock-item-mock.api';
 import { StockItemMockService } from './list/stock-item-mock.service';
+
+import { StockItemApi } from './list/stock-item.api';
+import { StockItemService } from './list/stock-item.service';
 
 export * from './form/displayform.mock.api';
 export * from './form/displayform.mock';
@@ -48,6 +51,9 @@ export * from './list/list.service';
 export * from './list/stock-item-mock.api';
 export * from './list/stock-item-mock.service';
 
+export * from './list/stock-item.api';
+export * from './list/stock-item.service';
+
 Container.bind(MockFormApi).to(FormMock);
 Container.bind(SearchFormMockApi).to(SearchFormMock);
 Container.bind(TableListMockApi).to(TableListMock);
@@ -58,4 +64,7 @@ Container.bind(FormApi).to(FormService);
 Container.bind(ListApi).to(ListService);
 Container.bind(CompositeFormApi).to(CompositeFormService);
 
-Container.bind(StockItemApi).to(StockItemMockService);
+/*** Stock Item Service  ******/
+
+Container.bind(StockItemMockApi).to(StockItemMockService);
+Container.bind(StockItemApi).to(StockItemService);
