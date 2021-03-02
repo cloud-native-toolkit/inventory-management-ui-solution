@@ -4,7 +4,7 @@ const url = require('url');
 module.exports = function(req, res, spanOptions) {
     const tracer = globalTracer();
 
-    const span = tracer.startSpan('http_request', spanOptions);
+    const span = tracer.startSpan(req.path, spanOptions);
 
     span.setTag(Tags.HTTP_METHOD, req.method);
     span.setTag(Tags.SPAN_KIND, "server");
