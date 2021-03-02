@@ -7,8 +7,10 @@ module.exports = function(req, res, spanOptions) {
     const span = tracer.startSpan(req.path, spanOptions);
 
     span.setTag(Tags.HTTP_METHOD, req.method);
-    span.setTag(Tags.SPAN_KIND, "server");
+    span.setTag(Tags.SPAN_KIND, Tags.SPAN_KIND_RPC_SERVER);
     span.setTag(Tags.HTTP_URL, req.url);
+
+    span.logEvent('request_received', {});
 
     const pathname = url.parse(req.url).pathname;
 
