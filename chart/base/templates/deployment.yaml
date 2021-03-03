@@ -41,18 +41,15 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-
           ports:
             - name: http
               containerPort: {{ .Values.image.port }}
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /
+            tcpSocket:
               port: http
           readinessProbe:
-            httpGet:
-              path: /
+            tcpSocket:
               port: http
           env:
             - name: INGRESS_HOST
