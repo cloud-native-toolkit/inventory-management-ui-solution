@@ -45,3 +45,6 @@ partOf: inventory
 connectsTo: inventory-management-bff
 
 runtime: js
+
+featureToggles:
+  ADD_ITEM: false

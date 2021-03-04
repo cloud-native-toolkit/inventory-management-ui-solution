@@ -57,13 +57,22 @@ class StockItemList extends Component {
     this.state = {
       data: [],
       selectedRow: 0,
+      features: {},
     };
   }
 
   async componentDidMount() {
 
-    this.setState({
-      data: await this.props.stockService.listStockItems()
+    this.props.stockService.listStockItems().then(result => {
+      this.setState({
+        data: result,
+      });
+    });
+
+    this.props.featuresService.listFeatures().then(result => {
+      this.setState({
+        features: result,
+      });
     });
   }
 
@@ -136,6 +145,9 @@ class StockItemList extends Component {
               </StructuredListBody>
             </StructuredListWrapper>
           </div>
+        </div>
+        <div>
+          <button className="bx--btn--primary" style={{padding: "10px 20px", display: this.state.features.ADD_ITEM ? "" : "none"}}>Add Item</button>
         </div>
       </div>
     );

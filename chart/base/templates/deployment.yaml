@@ -52,14 +52,16 @@ spec:
             tcpSocket:
               port: http
           env:
-            - name: INGRESS_HOST
-              value: ""
-            - name: PROTOCOLS
-              value: ""
             - name: LOG_LEVEL
               value: {{ .Values.logLevel | quote }}
             - name: API_HOST
               value: {{ printf "%s:80" .Values.connectsTo | quote }}
+            {{- if .Values.featureToggles }}
+            {{- range $index, $value := .Values.featureToggles }}
+            - name: {{ printf "TOGGLE_%s" $index }}
+              value: {{ $value | quote }}
+            {{- end }}
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
