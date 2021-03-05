@@ -46,5 +46,8 @@ connectsTo: inventory-management-bff
 
 runtime: js
 
+serviceMesh:
+  sidecar: false
+
 featureToggles:
   ADD_ITEM: false
