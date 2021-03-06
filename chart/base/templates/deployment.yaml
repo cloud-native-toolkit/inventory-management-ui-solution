@@ -63,7 +63,7 @@ spec:
             {{- if .Values.connectsTo }}
             - name: API_HOST
               value: {{ printf "%s:80" (index .Values.connectsTo 0) | quote }}
-            {{end}}
+            {{- end }}
             {{- if .Values.featureToggles }}
             {{- range $index, $value := .Values.featureToggles }}
             - name: {{ printf "TOGGLE_%s" $index }}
