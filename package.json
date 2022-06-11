@@ -39,7 +39,7 @@
     "jaeger-client": "^3.17.2",
     "log4js": "^3.0.5",
     "node-sass": "^4.13.1",
-    "opentracing": "^0.14.4",
+    "opentracing": "^0.14.7",
     "superagent": "^5.1.0"
   },
   "devDependencies": {
