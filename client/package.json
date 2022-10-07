@@ -13,7 +13,7 @@
     "babel-plugin-named-asset-import": "^0.2.3",
     "babel-preset-react-app": "^6.1.0",
     "bfj": "6.1.1",
-    "carbon-components": "^10.3.0",
+    "carbon-components": "^10.58.2",
     "carbon-components-react": "^6.115.5",
     "carbon-icons": "^7.0.7",
     "case-sensitive-paths-webpack-plugin": "2.1.2",
