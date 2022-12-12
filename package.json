@@ -33,7 +33,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "express-http-proxy": "^1.6.0",
     "ibm-cloud-env": "^0",
     "jaeger-client": "^3.17.2",
